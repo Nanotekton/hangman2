@@ -1,0 +1,6 @@
+{
+	"base":        ["Na2CO3", "K3PO4"], 
+	"solvent":     ["Toluene:water", "1,4-dioxane:water", "DMF:water"],
+	"ligand":      ["P(tBu)3", "PPh3", "Pcy3", "SPhos", "XPhos", "dba", "dppf"],
+	"temperature": [60, 100]
+}
