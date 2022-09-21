@@ -1,0 +1,142 @@
+identifiers {
+  type: NAME
+  value: "Suzuki coupling"
+}
+inputs {
+  key: "aryls"
+  value {
+    components {
+      identifiers {
+        type: SMILES
+        value: "$bromide_smiles$"
+      }
+      amount {
+        moles {
+          value: 0.1
+          units: MILLIMOLE
+        }
+      }
+      reaction_role: REACTANT
+    }
+    components {
+      identifiers {
+        type: SMILES
+        value: "$boronate_smiles$"
+      }
+      amount {
+        moles {
+          value: 0.3
+          units: MILLIMOLE
+        }
+      }
+      reaction_role: REACTANT
+    }
+    components {
+      identifiers {
+        type: NAME
+        value: "$solvent$"
+      }
+      identifiers {
+        type: SMILES
+        value: "$solvent_smiles$"
+      }
+      amount {
+        volume {
+          value: 8.0
+          units: MILLILITER
+        }
+        volume_includes_solutes: true
+      }
+      reaction_role: SOLVENT
+    }
+    components {
+      identifiers {
+        type: SMILES
+        value: "$catalyst_smiles$"
+      }
+      amount {
+        moles {
+          value: 0.005
+          units: MILLIMOLE
+        }
+      }
+      reaction_role: CATALYST
+    }
+    components {
+      identifiers {
+        type: NAME
+        details: "base"
+        value: "$base_name$"
+      }
+      identifiers {
+        type: SMILES
+        value: "$base_smiles$"
+      }
+      amount {
+        moles {
+          value: 0.75
+          units: MILLIMOLE
+        }
+      }
+      reaction_role: REAGENT
+    }
+  }
+}
+conditions {
+  temperature {
+    setpoint {
+      value: $temperature$
+      units: CELSIUS
+    }
+  }
+}
+outcomes {
+  products {
+    identifiers {
+      type: SMILES
+      value: "$product_smiles$"
+    }
+    is_desired_product: true
+    measurements {
+      analysis_key: "UV-Vis"
+      type: YIELD
+      percentage {
+        value: $yield$
+      }
+    }
+    measurements {
+      analysis_key: "LCMS"
+      type: IDENTITY
+    }
+    reaction_role: PRODUCT
+  }
+  analyses {
+    key: "LCMS"
+    value {
+      type: LCMS
+    }
+  }
+  analyses {
+    key: "UV-Vis"
+    value {
+      type: UV
+      details: "coupled to LCMS"
+    }
+  }
+}
+provenance {
+  experimenter {
+    name: "Nicholas Angello"
+    email: "angello3@illinois.edu"
+  }
+  record_created {
+    time {
+      value: "8/18/2022, 10:40:03 AM"
+    }
+    person {
+      name: "Wiktor Beker"
+      email: "wiktor.beker@wp.eu"
+    }
+  }
+}
+reaction_id: "ord-6bcc9ff3b6834c529ae78967108a0f3c"
